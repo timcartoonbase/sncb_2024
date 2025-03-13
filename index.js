@@ -2,7 +2,6 @@ const riveCanvas = document.getElementById('riveCanvas');
 let r;
 let trainForwards;
 let trainBackwards;
-console.log('test');
 
 
 r = new rive.Rive({
@@ -24,9 +23,7 @@ r = new rive.Rive({
         }
 
         // Access triggers properly (trigger inputs are not the same as other inputs)
-        trainForwards = window.riveInputs.find(i => i.name === 'trainForwards');
-        trainBackwards = window.riveInputs.find(i => i.name === 'trainBackwards');
-        
+        triggerTrain = window.riveInputs.find(i => i.name === 'triggerTrain');
         console.log('Triggers:', trainForwards, trainBackwards); // Debugging
     },
 });
@@ -39,22 +36,7 @@ const changeScene = (newScene) => {
 
     const sceneSelection = window.riveInputs.find(input => input.name === "Scene Selection");
     if (sceneSelection) {
-        if (currentScene < newScene) {
-            console.log("more");
-            // Fire train forward trigger
-            if (trainForwards) {
-                trainForwards.fire();
-                console.log("Train forward fired");
-            }
-        } else if (currentScene > newScene) {
-            console.log("less");
-            // Fire train backward trigger
-            if (trainBackwards) {
-                trainBackwards.fire();
-                console.log("Train backward fired");
-            }
-        }
-        
+        triggerTrain.fire();
         sceneSelection.value = newScene;
         currentScene = newScene; // Update the current scene
     }
