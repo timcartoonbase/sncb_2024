@@ -2,9 +2,11 @@ const riveCanvas = document.getElementById('riveCanvas');
 let r;
 let trainForwards;
 let trainBackwards;
+console.log('test');
+
 
 r = new rive.Rive({
-    src: 'assets/sncb_test.riv',
+    src: 'sncb_test.riv',
     canvas: riveCanvas,
     stateMachines: ["State Machine 1"],
     fitCanvasToArtboardHeight: true,
