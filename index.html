@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rive Animation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #riveCanvas {
+            overflow: hidden;
+            aspect-ratio: 1920 / 1080;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; margin: 20px;">
+        <button id="scene1Button" onclick="changeScene(1)">Scene 1</button>
+        <button id="scene2Button" style="margin-left: 10px;" onclick="changeScene(2)">Scene 2</button>
+    </div>
+    <canvas id="riveCanvas"></canvas>
+    <script src="https://unpkg.com/@rive-app/canvas@latest"></script>
+</body>
+</html>
