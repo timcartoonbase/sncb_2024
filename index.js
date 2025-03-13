@@ -4,7 +4,7 @@ let trainForwards;
 let trainBackwards;
 
 r = new rive.Rive({
-    src: '/assets/sncb_test.riv',
+    src: 'assets/sncb_test.riv',
     canvas: riveCanvas,
     stateMachines: ["State Machine 1"],
     fitCanvasToArtboardHeight: true,
